@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Cupcake Store</title>
+
+<link rel="stylesheet" type="text/css" href="cupcake.css">
+
+<script type="text/javascript">
+
+function creditcardgood(creditcard)
+{
+	var goodccnumber = new Boolean(true);
+
+if ((creditcard == null) || (creditcard == ""))
+	goodccnumber = false;
+
+if (creditcard.length != 16)
+	goodccnumber = false;
+	
+for (n = 0; n < creditcard.length; n++)
+	{
+	ccCheck = creditcard.slice(n, n + 1);
+
+	if ((ccCheck < "0") || (ccCheck > "9"))
+		goodccnumber = false;
+	}
+
+var numTotal = 0;
+
+for (n = 0; n < 16; n++)
+	{
+	ccCheck = parseInt(creditcard.slice(n, n+1),10);
+
+	if (n%2 == 0)
+		{
+		num = ccCheck * 2;
+		if (num > 9)
+			num = num -9;
+		}
+	else
+		{
+		num = ccCheck;
+		}
+	
+	numTotal = numTotal + num;
+
+	}
+
+if (numTotal % 10 != 0)
+	goodccnumber = false;
+
+return goodccnumber;
+}
+
+function checkcc()
+{
+num = document.getElementById("creditcardfield").value
+if (creditcardgood(num))
+	{
+	document.getElementById("creditcardfield").style.background="#00ff00";
+	}
+else
+	{
+	document.getElementById("creditcardfield").style.background="#ff6666";
+	}
+}
+
+var total = 0.0;
+
+function doVisible()
+{
+if (document.getElementById('sprinkles').checked)
+        {
+        document.getElementById('sprinklesImg').style.visibility="visible";
+		total = total + 2.50;
+        document.getElementById("totalPrice").innerHTML = "€" + total.toFixed(2);
+        }
+else
+        {
+        document.getElementById('sprinklesImg').style.visibility="hidden";
+		total = total - 2.50;
+        document.getElementById("totalPrice").innerHTML = "€" + total.toFixed(2);
+        }
+}
+
+function doVisibleOne()
+{
+if (document.getElementById('strawberries').checked)
+        {
+        document.getElementById('strawberriesImg').style.visibility="visible";
+		total = total + 1.25;
+        document.getElementById("totalPrice").innerHTML = "€" + total.toFixed(2);
+        }
+else
+        {
+        document.getElementById('strawberriesImg').style.visibility="hidden";
+		total = total - 1.25;
+        document.getElementById("totalPrice").innerHTML = "€" + total.toFixed(2);
+        }
+}
+
+function doVisibleTwo()
+{
+if (document.getElementById('cherry').checked)
+        {
+        document.getElementById('cherryImg').style.visibility="visible";
+		total = total + 2.10;
+        document.getElementById("totalPrice").innerHTML = "€" + total.toFixed(2);
+        }
+else
+        {
+        document.getElementById('cherryImg').style.visibility="hidden";
+		total = total - 2.10;
+        document.getElementById("totalPrice").innerHTML = "€" + total.toFixed(2);
+        }
+}
+
+function doVisibleThree()
+{
+if (document.getElementById('plainbun').checked)
+        {
+		total = total - total;
+		document.getElementById('chocolatebunImg').style.visibility="hidden";
+		document.getElementById('strawberrybunImg').style.visibility="hidden";
+		document.getElementById('lemonbunImg').style.visibility="hidden";
+        document.getElementById('plainbunImg').style.visibility="visible";
+		document.getElementById('chocolatebun').checked = false;
+		document.getElementById('strawberrybun').checked = false;
+		document.getElementById('lemonbun').checked = false;
+		total = total + 1.61;
+        document.getElementById("totalPrice").innerHTML = "€" + total.toFixed(2);
+        }
+else
+        {
+        document.getElementById('plainbunImg').style.visibility="hidden";
+		total = total - 1.61;
+        document.getElementById("totalPrice").innerHTML = "€" + total.toFixed(2);
+        }
+}
+
+function doVisibleFour()
+{
+if (document.getElementById('chocolatebun').checked)
+        {
+		total = total - total;
+		document.getElementById('plainbunImg').style.visibility="hidden";
+		document.getElementById('strawberrybunImg').style.visibility="hidden";
+		document.getElementById('lemonbunImg').style.visibility="hidden";
+        document.getElementById('chocolatebunImg').style.visibility="visible";
+		document.getElementById('plainbun').checked = false;
+		document.getElementById('strawberrybun').checked = false;
+		document.getElementById('lemonbun').checked = false;
+		total = total + 1.75;
+        document.getElementById("totalPrice").innerHTML = "€" + total.toFixed(2);
+        }
+else
+        {
+        document.getElementById('chocolatebunImg').style.visibility="hidden";
+		total = total - 1.75;
+        document.getElementById("totalPrice").innerHTML = "€" + total.toFixed(2);
+        }
+}
+
+function doVisibleFive()
+{
+if (document.getElementById('strawberrybun').checked)
+        {
+		total = total - total;
+		document.getElementById('plainbunImg').style.visibility="hidden";
+        document.getElementById('chocolatebunImg').style.visibility="hidden";
+        document.getElementById('lemonbunImg').style.visibility="hidden";
+        document.getElementById('strawberrybunImg').style.visibility="visible";
+		document.getElementById('chocolatebun').checked = false;
+		document.getElementById('plainbun').checked = false;
+		document.getElementById('lemonbun').checked = false;
+		total = total + 1.80;
+        document.getElementById("totalPrice").innerHTML = "€" + total.toFixed(2);
+        }
+else
+        {
+		total = total - total;
+        document.getElementById('strawberrybunImg').style.visibility="hidden";
+		total = total - 1.80;
+        document.getElementById("totalPrice").innerHTML = "€" + total.toFixed(2);
+        }
+}
+
+function doVisibleSix()
+{
+if (document.getElementById('lemonbun').checked)
+        {
+		total = total - total;
+		document.getElementById('plainbunImg').style.visibility="hidden";
+        document.getElementById('chocolatebunImg').style.visibility="hidden";
+        document.getElementById('strawberrybunImg').style.visibility="hidden";
+        document.getElementById('lemonbunImg').style.visibility="visible";
+		document.getElementById('chocolatebun').checked = false;
+		document.getElementById('strawberrybun').checked = false;
+		document.getElementById('plainbun').checked = false;
+		total = total + 1.65;
+        document.getElementById("totalPrice").innerHTML = "€" + total.toFixed(2);
+        }
+else
+        {
+        document.getElementById('lemonbunImg').style.visibility="hidden";
+		total = total - 1.65;
+        document.getElementById("totalPrice").innerHTML = "€" + total.toFixed(2);
+        }
+}
+
+function doVisibleSeven()
+{
+if (document.getElementById('chocoIcing').checked)
+        {
+        document.getElementById('chocoIcingImg').style.visibility="visible";
+		document.getElementById('lemonIcing').checked = false;
+		document.getElementById('strawberryIcing').checked = false;
+		total = total + 1.87;
+        document.getElementById("totalPrice").innerHTML = "€" + total.toFixed(2);
+        }
+else
+        {
+        document.getElementById('chocoIcingImg').style.visibility="hidden";
+		total = total - 1.87;
+        document.getElementById("totalPrice").innerHTML = "€" + total.toFixed(2);
+        }
+}
+
+function doVisibleEight()
+{
+if (document.getElementById('lemonIcing').checked)
+        {
+        document.getElementById('lemonIcingImg').style.visibility="visible";
+		document.getElementById('chocoIcing').checked = false;
+		document.getElementById('strawberryIcing').checked = false;
+		total = total + 1.03;
+        document.getElementById("totalPrice").innerHTML = "€" + total.toFixed(2);
+        }
+else
+        {
+        document.getElementById('lemonIcingImg').style.visibility="hidden";
+		total = total - 1.03;
+        document.getElementById("totalPrice").innerHTML = "€" + total.toFixed(2);
+        }
+}
+
+function doVisibleNine()
+{
+if (document.getElementById('strawberryIcing').checked)
+        {
+        document.getElementById('strawberryIcingImg').style.visibility="visible";
+		document.getElementById('lemonIcing').checked = false;
+		document.getElementById('chocoIcing').checked = false;
+		total = total + 2.12;
+        document.getElementById("totalPrice").innerHTML = "€" + total.toFixed(2);
+        }
+else
+        {
+        document.getElementById('strawberryIcingImg').style.visibility="hidden";
+		total = total - 2.12;
+        document.getElementById("totalPrice").innerHTML = "€" + total.toFixed(2);
+        }
+}
+
+function setCookie(valueOne, valueTwo) {
+		cookieSet = valueOne + "=" + valueTwo + ";"; 
+		document.cookie = cookieSet;
+}
+
+function setAllCookies() {
+	var fName = document.getElementById("firstname").value; 
+	setCookie("firstName", fName); 
+	var email = document.getElementById("email").value;
+	setCookie("email", email);
+	var cc = document.getElementById("creditcardfield").value;
+	setCookie("cerditCard", cc); 
+	var flavor = document.getElementById("").value
+}
+
+	function getCookie(one) {
+		var name = one + "=";
+		var ca = document.cookie.split(';');
+		for (i=0; i<ca.length; i++) {
+			var c = ca[i];
+			while(c.charAt(0)==' ')
+				c = c.substring(1);
+			if (c.indexOf(name)==0)
+				return c.substring(name.length, c.length);
+		}
+		return "";
+	}
+	
+function getAllCookies() {
+	document.getElementById("firstname").value = getCookie("firstName");
+	document.getElementById("email").value = getCookie("email");
+	document.getElementById("creditcardfield").value = getCookie("creditcard");
+	
+}
+
+</script>
+
+</head>
+
+ 
+<body onload = "javascript:getAllCookies();">
+
+<section>
+  <h2><span class="one">Woodland</span> <span class="two">Paperworks</span></h2>
+</section>
+
+<div id="container">
+	<div class="formcon">
+		<div class="order">
+			<form name="form" method="post" action="http://atlantis.cit.ie/displayvalues.php">
+				<fieldset>
+					<legend>Order Form</legend>
+					<input type="text" id="firstname" name="first_name" onChange="checkName()" placeholder="NAME" required title="This field cannot be left blank!">
+					<br><br>
+					<input type="text" id="address" name="address" placeholder="ADDRESS" required title="This field cannot be left blank!">
+					<br><br>
+					<input  type="email" id="email" name="email" placeholder="MAIL" required title="This field cannot be left blank!">
+					<br><br>
+					<input type="text" id="creditcardfield" name="creditcard" onChange="checkcc()" placeholder="CREDIT CARD NUMBER" required title="This field cannot be left blank!">
+					<br><br> 
+					<textarea name="comments" placeholder="MESSAGE" required title="This field cannot be left blank!"></textarea>
+					<br><br>
+					<button name="SUBMIT" type="submit" class="submit" onClick="checkcc()" onclick="return setAllCookies()">SEND</button>
+					<br><br>
+				</fieldset>
+			</form>
+		</div>
+	
+		<div class="divtopping">
+			<fieldset class="topping">
+					<legend class="topping">Cupcake Toppings</legend>
+					Sprinkles - €2.50<br>
+					<input type="checkbox" id="sprinkles" onclick="doVisible()" name="top">
+					<br><br>
+					Strawberries - €1.25<br>
+					<input type="checkbox" id="strawberries" onclick="doVisibleOne()" name="top">
+					<br><br>
+					Cherry - €2.10<br>
+					<input type="checkbox" id="cherry" onclick="doVisibleTwo()" name="top">
+					<br><br>
+				</fieldset>
+		</div>
+		
+		<div class="divflavour">	
+			<fieldset class="flavour">
+				<legend class="flavour">Bun Flavour</legend>
+				Plain - €1.61<br>
+				<input type="radio" id="plainbun" onclick="doVisibleThree()" name="bunflav">
+				<br><br>
+				Chocolate - €1.75<br>
+				<input type="radio" id="chocolatebun" onclick="doVisibleFour()" name="bunflav">
+				<br><br>
+				Strawberry - €1.80<br>
+				<input type="radio" id="strawberrybun" onclick="doVisibleFive()" name="bunflav">
+				<br><br>
+				Lemon - €1.65<br>
+				<input type="radio" id="lemonbun" onclick="doVisibleSix()" name="bunflav">
+				<br><br>
+			</fieldset>
+		</div>
+			
+		<div class="divIcing">	
+			<fieldset class="icing">
+				<legend class="icing">Icing Flavour</legend>
+				Chocolate - €1.87<br>
+				<input type="radio" id="chocoIcing" onclick="doVisibleSeven()" name="icingflav">
+				<br><br>
+				Lemon - €1.03<br>
+				<input type="radio" id="lemonIcing" onclick="doVisibleEight()" name="icingflav">
+				<br><br>
+				Strawberry - €2.12<br>
+				<input type="radio" id="strawberryIcing" onclick="doVisibleNine()" name="icingflav">
+				<br><br>
+			</fieldset>
+		</div>
+	</div>
+</div>
+
+<div class="imagebun">
+	<img src="img/default-cupcuake.png" width="400" height="400" alt="defaultbun" id="defaultbunImg" class="defaultImg"/>
+	<img src="img/cupcquake_plainbun.png" width="400" height="400" alt="plainbun" id="plainbunImg" class="bunImg"/>
+	<img src="img/cupcquake_chocobun.png" width="400" height="400" alt="chocolatebun" id="chocolatebunImg" class="bunImg"/>
+	<img src="img/cupcquake_strawbun.png" width="400" height="400" alt="strawberrybun" id="strawberrybunImg" class="bunImg"/>
+	<img src="img/cupcquake_lemonbun.png" width="400" height="400" alt="lemonbun" id="lemonbunImg" class="bunImg"/>
+</div>
+
+<div class="imageicing">
+	<img src="img/default-icing.png" width="400" height="400" alt="defaultIcing" id="defaultIcingImg" class="defaultImg"/>
+	<img src="img/cupcquake_chocoice.png" width="400" height="400" alt="chocoIcing" id="chocoIcingImg" class="icingImg"/>
+	<img src="img/cupcquake_lemonice.png" width="400" height="400" alt="lemonIcing" id="lemonIcingImg" class="icingImg"/>
+	<img src="img/cupcquake_strawice.png" width="400" height="400" alt="strawberryIcing" id="strawberryIcingImg" class="icingImg"/>
+</div>
+
+<div class="imagetoppings">
+	<img src="img/sprinkles.png" width="400" height="400" alt="sprinkles" id="sprinklesImg" class="toppingImg"/>
+	<img src="img/strawberry.png" width="400" height="400" alt="strawberries" id="strawberriesImg" class="toppingImg"/>
+	<img src="img/cherry.png" width="400" height="400" alt="cherry" id="cherryImg" class="toppingImg"/>
+</div>
+<div class="price">
+	<p>Price: <span id="totalPrice" class="pricetext">€0.00</span></p><br/><br/>
+</div>
+</div>
+
+</body>
+</html>

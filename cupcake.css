@@ -1,0 +1,209 @@
+body {
+    background-color: #DFE2DB;
+}
+
+fieldset { 
+	border: 2px; 
+	border-style: solid;
+    border-color: #FFF056; 
+	width: 160px;
+}
+
+fieldset.topping { 
+	border: 2px;
+	border-style: solid;
+    border-color: #FFF056;
+	width: 170px; 
+}
+
+fieldset.flavour { 
+	border: 2px;
+	border-style: solid;
+    border-color: #FFF056;
+	width: 170px;
+}
+
+fieldset.icing {
+	border: 2px;
+	border-style: solid;
+    border-color: #FFF056;
+	width: 160px;
+}
+
+
+.topping {
+	padding: 0.2em 0.5em;
+	border: 2px;
+	border-style: solid;
+	border-color: #FFF056;
+	font-size:110%;
+	text-align: center;
+}
+
+.flavour {
+	padding: 0.2em 0.5em;
+	border: 2px;
+	border-style: solid;
+	border-color: #FFF056;
+	font-size:110%;
+	text-align: center;
+}
+
+.icing {
+	padding: 0.2em 0.5em;
+	border: 2px;
+	border-style: solid;
+	border-color: #FFF056;
+	font-size:110%;
+	text-align: center;
+}
+
+legend {
+	padding: 0.2em 0.5em;
+	border: 2px;
+	border-style: solid;
+	border-color: #FFF056;
+	font-size:110%;
+	text-align: center;
+}
+ 
+.formcon {
+	position: absolute;
+	top: 80px;
+	left: 120px;
+}
+ 
+.order {
+	position: absolute;
+	top: 80px;
+	left: 100px;
+} 
+
+.divflavour {
+	position: absolute;
+	top: 80px;
+	left: 320px;
+}
+
+.divtopping {
+	position: absolute;
+	top: 80px;
+	left: 730px;
+}
+
+.divIcing {
+	position: absolute;
+	top: 80px;
+	left: 530px;
+}
+  
+.imagetoppings {
+	position: absolute;
+	top: 200px;
+	right: 350px;
+	width: 300px;
+}
+
+.imagebun {
+	position: absolute;
+	top: 200px;
+	right: 350px;
+	width: 300px;
+}
+	
+.imageicing {
+	position: absolute;
+	top: 200px;
+	right: 350px;
+	width: 300px;
+}
+	
+.icingImg {
+	position: absolute;
+}
+
+.bunImg {
+	position: absolute;
+}
+
+.defaultImg {
+	position: absolute;
+}
+
+.toppingImg {
+	position: absolute;
+}
+
+#sprinklesImg, #strawberriesImg, #cherryImg, #plainbunImg, #strawberrybunImg, #chocolatebunImg, #strawberrybunImg, #lemonbunImg, #chocoIcingImg, #lemonIcingImg, #strawberryIcingImg {
+	visibility: hidden;
+}
+
+.price {
+	position: absolute;
+	top: 560px;
+	right: 216px;
+	width: 300px;
+	font-size:170%;
+}
+
+section {
+  width: 50%;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+h2 {
+  font-family: Futura, Helvetica, sans-serif;
+  color: white;
+}
+
+h2 span.one,
+h2 span.two {
+  position: relative;
+  display: block;
+  width: 50%;
+  margin: .25em 25%;
+  background: orange;
+}
+
+span.one:after,
+span.two:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  background: orange;
+  width: 9999px
+}
+
+span.one:after {
+  left: 100%;
+}
+
+span.two:before {
+  right: 100%;
+}
+
+span.one:before,
+span.two:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border: 0.7em solid orange;
+}
+
+span.one:before {
+  left: -1em;
+  border-right-width: 0.7em;
+  border-left-color: transparent;
+}
+
+span.two:after {
+  right: -1em;
+  top: 0;
+  border-left-width: 0.7em;
+  border-right-color: transparent;
+}
